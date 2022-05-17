@@ -1,3 +1,4 @@
+import 'package:faculty_demo_app/aboutus/about_us_screen.dart';
 import 'package:faculty_demo_app/history/history_screen.dart';
 import 'package:faculty_demo_app/home/home_element.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                   onTap: () {
                     switch (item) {
                       case HomeElement.aboutUs:
-                        // TODO: Handle this case.
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => AboutUsScreen()));
                         break;
                       case HomeElement.history:
                         Navigator.push(context, MaterialPageRoute(builder: (context) => HistoryScreen()));
