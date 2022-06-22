@@ -1,7 +1,10 @@
 import 'package:faculty_demo_app/aboutus/about_us_screen.dart';
 import 'package:faculty_demo_app/history/history_screen.dart';
 import 'package:faculty_demo_app/home/home_element.dart';
+import 'package:faculty_demo_app/news/blok/news_bloc.dart';
+import 'package:faculty_demo_app/news/news_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -74,7 +77,8 @@ class HomeScreen extends StatelessWidget {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => HistoryScreen()));
                         break;
                       case HomeElement.news:
-                        // TODO: Handle this case.
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return BlocProvider.value(value: NewsBloc()..add(LoadingNewsEvent()), child: const NewsScreen());}));
                         break;
                       case HomeElement.candidateStudents:
                         // TODO: Handle this case.
