@@ -1,4 +1,5 @@
 import 'package:faculty_demo_app/aboutus/about_us_screen.dart';
+import 'package:faculty_demo_app/career/career_screen.dart';
 import 'package:faculty_demo_app/history/history_screen.dart';
 import 'package:faculty_demo_app/home/home_element.dart';
 import 'package:faculty_demo_app/news/blok/news_bloc.dart';
@@ -87,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                         // TODO: Handle this case.
                         break;
                       case HomeElement.careerCenter:
-                        // TODO: Handle this case.
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => CareerScreen()));
                         break;
                       case HomeElement.library:
                         // TODO: Handle this case.
