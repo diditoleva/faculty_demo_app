@@ -9,23 +9,37 @@ class CareerScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("Кариерен център")),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.only(left: 20, right: 20),
           child: ListView.builder(
-                itemCount: CareerElement.values.length,
-                itemBuilder: (context, index) => _buildExpandableItems(CareerElement.values[index]),
-              )
-      ),
+            itemCount: CareerElement.values.length,
+            itemBuilder: (context, index) =>
+                _buildExpandableItems(CareerElement.values[index]),
+          )),
     );
   }
 
   Widget _buildExpandableItems(CareerElement item) {
-    return ExpansionTile(
-      title: Text(item.title),
-      children: [Text("Центърът за кариерно развитие (ЦКР) е административно звено към ГГФ.")],
-      collapsedBackgroundColor: Colors.blue,
-      backgroundColor: Colors.blue,
-      collapsedTextColor: Colors.white,
-      textColor: Colors.white,
+    return Padding(
+      padding: const EdgeInsets.only(top: 5, bottom: 5),
+      child: ExpansionTile(
+        title: Text(item.title),
+        children: [
+          Container(
+            color: Colors.white,
+            child: const Padding(
+              padding: EdgeInsets.all(15),
+              child: Text(
+                  "Центърът за кариерно развитие (ЦКР) е административно звено към ГГФ."),
+            ),
+          )
+        ],
+        collapsedBackgroundColor: Colors.blue,
+        backgroundColor: Colors.blue,
+        collapsedTextColor: Colors.white,
+        textColor: Colors.white,
+        collapsedIconColor: Colors.white,
+        iconColor: Colors.white,
+      ),
     );
   }
 }
